@@ -1,59 +1,1681 @@
 <!DOCTYPE html>
 
-<style>
-    .answer-explanation {
-        opacity: 0;
-    }
+<head>
+    <title>SAT questions lookup</title>
+    <style>
+        img {
+            display: inline-block !important;
+        }
 
-    .answer-explanation.show {
-        opacity: 1;
-    }
+        .hidden {
+            display: none !important;
+        }
+    </style>
+    <style>
+        .sr-only {
+            display: none;
+        }
+    </style>
+    <style>
+        *,
+        ::before,
+        ::after {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style:
+        }
 
-    .question table {
-        border: 1px solid;
-    }
+        ::backdrop {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style:
+        }
 
-    .question table tr th {
-        border: 1px solid;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
+        ::after,
+        ::before {
+            --tw-content: ''
+        }
 
-    .question table tr td {
-        border: 1px solid;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
+        :host,
+        html {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            -moz-tab-size: 4;
+            tab-size: 4;
+            font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            -webkit-tap-highlight-color: transparent
+        }
 
-    .question ul {
-        list-style: disc;
-        padding-left: 40px;
-        margin-top: 16px;
-        margin-bottom: 16px;
-    }
+        body {
+            margin: 0;
+            line-height: inherit
+        }
 
-    .question ol {
-        padding-left: 40px;
-        margin-top: 16px;
-        margin-bottom: 16px;
-    }
-</style>
+        hr {
+            height: 0;
+            color: inherit;
+            border-top-width: 1px
+        }
 
-<input type="text" id="lookup-input"> <button id="lookup-enter">Lookup</button>
+        abbr:where([title]) {
+            -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: inherit;
+            font-weight: inherit
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit
+        }
+
+        b,
+        strong {
+            font-weight: bolder
+        }
+
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            font-size: 1em
+        }
+
+        small {
+            font-size: 80%
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        table {
+            text-indent: 0;
+            border-color: inherit;
+            border-collapse: collapse
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-feature-settings: inherit;
+            font-variation-settings: inherit;
+            font-size: 100%;
+            font-weight: inherit;
+            line-height: inherit;
+            letter-spacing: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0
+        }
+
+        button,
+        select {
+            text-transform: none
+        }
+
+        button,
+        input:where([type=button]),
+        input:where([type=reset]),
+        input:where([type=submit]) {
+            -webkit-appearance: button;
+            background-color: transparent;
+            background-image: none
+        }
+
+        :-moz-focusring {
+            outline: auto
+        }
+
+        :-moz-ui-invalid {
+            box-shadow: none
+        }
+
+        progress {
+            vertical-align: baseline
+        }
+
+        ::-webkit-inner-spin-button,
+        ::-webkit-outer-spin-button {
+            height: auto
+        }
+
+        [type=search] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px
+        }
+
+        ::-webkit-search-decoration {
+            -webkit-appearance: none
+        }
+
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit
+        }
+
+        summary {
+            display: list-item
+        }
+
+        blockquote,
+        dd,
+        dl,
+        figure,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        p,
+        pre {
+            margin: 0
+        }
+
+        fieldset {
+            margin: 0;
+            padding: 0
+        }
+
+        legend {
+            padding: 0
+        }
+
+        menu,
+        ol,
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        dialog {
+            padding: 0
+        }
+
+        textarea {
+            resize: vertical
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            opacity: 1;
+            color: #9ca3af
+        }
+
+        [role=button],
+        button {
+            cursor: pointer
+        }
+
+        :disabled {
+            cursor: default
+        }
+
+        audio,
+        canvas,
+        embed,
+        iframe,
+        img,
+        object,
+        svg,
+        video {
+            display: block;
+            vertical-align: middle
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            height: auto
+        }
+
+        [hidden]:where(:not([hidden=until-found])) {
+            display: none
+        }
+
+        .container {
+            width: 100%
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                max-width: 640px
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 768px
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1024px
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1280px
+            }
+        }
+
+        @media (min-width: 1536px) {
+            .container {
+                max-width: 1536px
+            }
+        }
+
+        .fixed {
+            position: fixed
+        }
+
+        .bottom-4 {
+            bottom: 1rem
+        }
+
+        .right-2 {
+            right: 0.5rem
+        }
+
+        .mx-\[-2rem\] {
+            margin-left: -2rem;
+            margin-right: -2rem
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .my-2 {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem
+        }
+
+        .my-3 {
+            margin-top: 0.75rem;
+            margin-bottom: 0.75rem
+        }
+
+        .my-4 {
+            margin-top: 1rem;
+            margin-bottom: 1rem
+        }
+
+        .my-6 {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem
+        }
+
+        .my-\[-2rem\] {
+            margin-top: -2rem;
+            margin-bottom: -2rem
+        }
+
+        .mb-14 {
+            margin-bottom: 3.5rem
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem
+        }
+
+        .ml-1 {
+            margin-left: 0.25rem
+        }
+
+        .mr-5 {
+            margin-right: 1.25rem
+        }
+
+        .mt-1 {
+            margin-top: 0.25rem
+        }
+
+        .mt-3 {
+            margin-top: 0.75rem
+        }
+
+        .mt-4 {
+            margin-top: 1rem
+        }
+
+        .mt-8 {
+            margin-top: 2rem
+        }
+
+        .inline-block {
+            display: inline-block
+        }
+
+        .flex {
+            display: flex
+        }
+
+        .grid {
+            display: grid
+        }
+
+        .hidden {
+            display: none
+        }
+
+        .h-6 {
+            height: 1.5rem
+        }
+
+        .w-6 {
+            width: 1.5rem
+        }
+
+        .cursor-pointer {
+            cursor: pointer
+        }
+
+        .select-none {
+            -webkit-user-select: none;
+            user-select: none
+        }
+
+        .list-\[upper-alpha\] {
+            list-style-type: upper-alpha
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr))
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .flex-col {
+            flex-direction: column
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap
+        }
+
+        .items-center {
+            align-items: center
+        }
+
+        .justify-center {
+            justify-content: center
+        }
+
+        .gap-16 {
+            gap: 4rem
+        }
+
+        .gap-2 {
+            gap: 0.5rem
+        }
+
+        .gap-y-16 {
+            row-gap: 4rem
+        }
+
+        .gap-y-3 {
+            row-gap: 0.75rem
+        }
+
+        .space-x-1> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+            margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-y-1> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(0.25rem * var(--tw-space-y-reverse))
+        }
+
+        .rounded {
+            border-radius: 0.25rem
+        }
+
+        .rounded-xl {
+            border-radius: 0.75rem
+        }
+
+        .border {
+            border-width: 1px
+        }
+
+        .border-b-4 {
+            border-bottom-width: 4px
+        }
+
+        .border-l-4 {
+            border-left-width: 4px
+        }
+
+        .border-indigo-500 {
+            --tw-border-opacity: 1;
+            border-color: rgb(99 102 241 / var(--tw-border-opacity, 1))
+        }
+
+        .border-b-green-500 {
+            --tw-border-opacity: 1;
+            border-bottom-color: rgb(34 197 94 / var(--tw-border-opacity, 1))
+        }
+
+        .border-b-orange-400 {
+            --tw-border-opacity: 1;
+            border-bottom-color: rgb(251 146 60 / var(--tw-border-opacity, 1))
+        }
+
+        .border-b-red-500 {
+            --tw-border-opacity: 1;
+            border-bottom-color: rgb(239 68 68 / var(--tw-border-opacity, 1))
+        }
+
+        .bg-blue-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(219 234 254 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-indigo-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(224 231 255 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-orange-300 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(253 186 116 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-orange-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(234 88 12 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-orange-700 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(194 65 12 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-red-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-slate-50 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-red-200 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(254 202 202 / var(--tw-bg-opacity, 1))
+        }
+
+        .p-2 {
+            padding: 0.5rem
+        }
+
+        .px-2 {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem
+        }
+
+        .px-3 {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem
+        }
+
+        .px-8 {
+            padding-left: 2rem;
+            padding-right: 2rem
+        }
+
+        .px-\[2rem\] {
+            padding-left: 2rem;
+            padding-right: 2rem
+        }
+
+        .py-1 {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem
+        }
+
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem
+        }
+
+        .py-\[2rem\] {
+            padding-top: 2rem;
+            padding-bottom: 2rem
+        }
+
+        .pb-4 {
+            padding-bottom: 1rem
+        }
+
+        .text-center {
+            text-align: center
+        }
+
+        .text-4xl {
+            font-size: 2.25rem;
+            line-height: 2.5rem
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem
+        }
+
+        .font-bold {
+            font-weight: 700
+        }
+
+        .text-black {
+            --tw-text-opacity: 1;
+            color: rgb(0 0 0 / var(--tw-text-opacity, 1))
+        }
+
+        .text-indigo-600 {
+            --tw-text-opacity: 1;
+            color: rgb(79 70 229 / var(--tw-text-opacity, 1))
+        }
+
+        .text-orange-700 {
+            --tw-text-opacity: 1;
+            color: rgb(194 65 12 / var(--tw-text-opacity, 1))
+        }
+
+        .text-slate-300 {
+            --tw-text-opacity: 1;
+            color: rgb(203 213 225 / var(--tw-text-opacity, 1))
+        }
+
+        .text-slate-600 {
+            --tw-text-opacity: 1;
+            color: rgb(71 85 105 / var(--tw-text-opacity, 1))
+        }
+
+        .text-white {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+        }
+
+        .underline {
+            -webkit-text-decoration-line: underline;
+            text-decoration-line: underline
+        }
+
+        .transition-colors {
+            transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .transition-opacity {
+            transition-property: opacity;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .duration-150 {
+            transition-duration: 150ms
+        }
+
+        .duration-75 {
+            transition-duration: 75ms
+        }
+
+        .hover\:bg-orange-100:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 237 213 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-orange-400:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(251 146 60 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-red-500:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1))
+        }
+
+        @media (min-width: 768px) {
+            .md\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .md\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr))
+            }
+        }
+    </style>
+    <style type="text/css">
+        .CtxtMenu_InfoClose {
+            top: .2em;
+            right: .2em;
+        }
+
+        .CtxtMenu_InfoContent {
+            overflow: auto;
+            text-align: left;
+            font-size: 80%;
+            padding: .4em .6em;
+            border: 1px inset;
+            margin: 1em 0px;
+            max-height: 20em;
+            max-width: 30em;
+            background-color: #EEEEEE;
+            white-space: normal;
+        }
+
+        .CtxtMenu_Info.CtxtMenu_MousePost {
+            outline: none;
+        }
+
+        .CtxtMenu_Info {
+            position: fixed;
+            left: 50%;
+            width: auto;
+            text-align: center;
+            border: 3px outset;
+            padding: 1em 2em;
+            background-color: #DDDDDD;
+            color: black;
+            cursor: default;
+            font-family: message-box;
+            font-size: 120%;
+            font-style: normal;
+            text-indent: 0;
+            text-transform: none;
+            line-height: normal;
+            letter-spacing: normal;
+            word-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            float: none;
+            z-index: 201;
+            border-radius: 15px;
+            /* Opera 10.5 and IE9 */
+            -webkit-border-radius: 15px;
+            /* Safari and Chrome */
+            -moz-border-radius: 15px;
+            /* Firefox */
+            -khtml-border-radius: 15px;
+            /* Konqueror */
+            box-shadow: 0px 10px 20px #808080;
+            /* Opera 10.5 and IE9 */
+            -webkit-box-shadow: 0px 10px 20px #808080;
+            /* Safari 3 & Chrome */
+            -moz-box-shadow: 0px 10px 20px #808080;
+            /* Forefox 3.5 */
+            -khtml-box-shadow: 0px 10px 20px #808080;
+            /* Konqueror */
+            filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true");
+            /* IE */
+        }
+    </style>
+    <style type="text/css">
+        .CtxtMenu_MenuClose {
+            position: absolute;
+            cursor: pointer;
+            display: inline-block;
+            border: 2px solid #AAA;
+            border-radius: 18px;
+            -webkit-border-radius: 18px;
+            /* Safari and Chrome */
+            -moz-border-radius: 18px;
+            /* Firefox */
+            -khtml-border-radius: 18px;
+            /* Konqueror */
+            font-family: "Courier New", Courier;
+            font-size: 24px;
+            color: #F0F0F0
+        }
+
+        .CtxtMenu_MenuClose span {
+            display: block;
+            background-color: #AAA;
+            border: 1.5px solid;
+            border-radius: 18px;
+            -webkit-border-radius: 18px;
+            /* Safari and Chrome */
+            -moz-border-radius: 18px;
+            /* Firefox */
+            -khtml-border-radius: 18px;
+            /* Konqueror */
+            line-height: 0;
+            padding: 8px 0 6px
+                /* may need to be browser-specific */
+        }
+
+        .CtxtMenu_MenuClose:hover {
+            color: white !important;
+            border: 2px solid #CCC !important
+        }
+
+        .CtxtMenu_MenuClose:hover span {
+            background-color: #CCC !important
+        }
+
+        .CtxtMenu_MenuClose:hover:focus {
+            outline: none
+        }
+    </style>
+    <style type="text/css">
+        .CtxtMenu_Menu {
+            position: absolute;
+            background-color: white;
+            color: black;
+            width: auto;
+            padding: 5px 0px;
+            border: 1px solid #CCCCCC;
+            margin: 0;
+            cursor: default;
+            font: menu;
+            text-align: left;
+            text-indent: 0;
+            text-transform: none;
+            line-height: normal;
+            letter-spacing: normal;
+            word-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            float: none;
+            z-index: 201;
+            border-radius: 5px;
+            /* Opera 10.5 and IE9 */
+            -webkit-border-radius: 5px;
+            /* Safari and Chrome */
+            -moz-border-radius: 5px;
+            /* Firefox */
+            -khtml-border-radius: 5px;
+            /* Konqueror */
+            box-shadow: 0px 10px 20px #808080;
+            /* Opera 10.5 and IE9 */
+            -webkit-box-shadow: 0px 10px 20px #808080;
+            /* Safari 3 & Chrome */
+            -moz-box-shadow: 0px 10px 20px #808080;
+            /* Forefox 3.5 */
+            -khtml-box-shadow: 0px 10px 20px #808080;
+            /* Konqueror */
+        }
+
+        .CtxtMenu_MenuItem {
+            padding: 1px 2em;
+            background: transparent;
+        }
+
+        .CtxtMenu_MenuArrow {
+            position: absolute;
+            right: .5em;
+            padding-top: .25em;
+            color: #666666;
+            font-family: null;
+            font-size: .75em
+        }
+
+        .CtxtMenu_MenuActive .CtxtMenu_MenuArrow {
+            color: white
+        }
+
+        .CtxtMenu_MenuArrow.CtxtMenu_RTL {
+            left: .5em;
+            right: auto
+        }
+
+        .CtxtMenu_MenuCheck {
+            position: absolute;
+            left: .7em;
+            font-family: null
+        }
+
+        .CtxtMenu_MenuCheck.CtxtMenu_RTL {
+            right: .7em;
+            left: auto
+        }
+
+        .CtxtMenu_MenuRadioCheck {
+            position: absolute;
+            left: .7em;
+        }
+
+        .CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {
+            right: .7em;
+            left: auto
+        }
+
+        .CtxtMenu_MenuInputBox {
+            padding-left: 1em;
+            right: .5em;
+            color: #666666;
+            font-family: null;
+        }
+
+        .CtxtMenu_MenuInputBox.CtxtMenu_RTL {
+            left: .1em;
+        }
+
+        .CtxtMenu_MenuComboBox {
+            left: .1em;
+            padding-bottom: .5em;
+        }
+
+        .CtxtMenu_MenuSlider {
+            left: .1em;
+        }
+
+        .CtxtMenu_SliderValue {
+            position: absolute;
+            right: .1em;
+            padding-top: .25em;
+            color: #333333;
+            font-size: .75em
+        }
+
+        .CtxtMenu_SliderBar {
+            outline: none;
+            background: #d3d3d3
+        }
+
+        .CtxtMenu_MenuLabel {
+            padding: 1px 2em 3px 1.33em;
+            font-style: italic
+        }
+
+        .CtxtMenu_MenuRule {
+            border-top: 1px solid #DDDDDD;
+            margin: 4px 3px;
+        }
+
+        .CtxtMenu_MenuDisabled {
+            color: GrayText
+        }
+
+        .CtxtMenu_MenuActive {
+            background-color: #606872;
+            color: white;
+        }
+
+        .CtxtMenu_MenuDisabled:focus {
+            background-color: #E8E8E8
+        }
+
+        .CtxtMenu_MenuLabel:focus {
+            background-color: #E8E8E8
+        }
+
+        .CtxtMenu_ContextMenu:focus {
+            outline: none
+        }
+
+        .CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {
+            outline: none
+        }
+
+        .CtxtMenu_SelectionMenu {
+            position: relative;
+            float: left;
+            border-bottom: none;
+            -webkit-box-shadow: none;
+            -webkit-border-radius: 0px;
+        }
+
+        .CtxtMenu_SelectionItem {
+            padding-right: 1em;
+        }
+
+        .CtxtMenu_Selection {
+            right: 40%;
+            width: 50%;
+        }
+
+        .CtxtMenu_SelectionBox {
+            padding: 0em;
+            max-height: 20em;
+            max-width: none;
+            background-color: #FFFFFF;
+        }
+
+        .CtxtMenu_SelectionDivider {
+            clear: both;
+            border-top: 2px solid #000000;
+        }
+
+        .CtxtMenu_Menu .CtxtMenu_MenuClose {
+            top: -10px;
+            left: -10px
+        }
+    </style>
+    <style id="MJX-CHTML-styles">
+        mjx-container[jax="CHTML"] {
+            line-height: 0;
+        }
+
+        mjx-container [space="1"] {
+            margin-left: .111em;
+        }
+
+        mjx-container [space="2"] {
+            margin-left: .167em;
+        }
+
+        mjx-container [space="3"] {
+            margin-left: .222em;
+        }
+
+        mjx-container [space="4"] {
+            margin-left: .278em;
+        }
+
+        mjx-container [space="5"] {
+            margin-left: .333em;
+        }
+
+        mjx-container [rspace="1"] {
+            margin-right: .111em;
+        }
+
+        mjx-container [rspace="2"] {
+            margin-right: .167em;
+        }
+
+        mjx-container [rspace="3"] {
+            margin-right: .222em;
+        }
+
+        mjx-container [rspace="4"] {
+            margin-right: .278em;
+        }
+
+        mjx-container [rspace="5"] {
+            margin-right: .333em;
+        }
+
+        mjx-container [size="s"] {
+            font-size: 70.7%;
+        }
+
+        mjx-container [size="ss"] {
+            font-size: 50%;
+        }
+
+        mjx-container [size="Tn"] {
+            font-size: 60%;
+        }
+
+        mjx-container [size="sm"] {
+            font-size: 85%;
+        }
+
+        mjx-container [size="lg"] {
+            font-size: 120%;
+        }
+
+        mjx-container [size="Lg"] {
+            font-size: 144%;
+        }
+
+        mjx-container [size="LG"] {
+            font-size: 173%;
+        }
+
+        mjx-container [size="hg"] {
+            font-size: 207%;
+        }
+
+        mjx-container [size="HG"] {
+            font-size: 249%;
+        }
+
+        mjx-container [width="full"] {
+            width: 100%;
+        }
+
+        mjx-box {
+            display: inline-block;
+        }
+
+        mjx-block {
+            display: block;
+        }
+
+        mjx-itable {
+            display: inline-table;
+        }
+
+        mjx-row {
+            display: table-row;
+        }
+
+        mjx-row>* {
+            display: table-cell;
+        }
+
+        mjx-mtext {
+            display: inline-block;
+        }
+
+        mjx-mstyle {
+            display: inline-block;
+        }
+
+        mjx-merror {
+            display: inline-block;
+            color: red;
+            background-color: yellow;
+        }
+
+        mjx-mphantom {
+            visibility: hidden;
+        }
+
+        _::-webkit-full-page-media,
+        _:future,
+        :root mjx-container {
+            will-change: opacity;
+        }
+
+        mjx-assistive-mml {
+            position: absolute !important;
+            top: 0px;
+            left: 0px;
+            clip: rect(1px, 1px, 1px, 1px);
+            padding: 1px 0px 0px 0px !important;
+            border: 0px !important;
+            display: block !important;
+            width: auto !important;
+            overflow: hidden !important;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        mjx-assistive-mml[display="block"] {
+            width: 100% !important;
+        }
+
+        mjx-c::before {
+            display: block;
+            width: 0;
+        }
+
+        .MJX-TEX {
+            font-family: MJXZERO, MJXTEX;
+        }
+
+        .TEX-B {
+            font-family: MJXZERO, MJXTEX-B;
+        }
+
+        .TEX-I {
+            font-family: MJXZERO, MJXTEX-I;
+        }
+
+        .TEX-MI {
+            font-family: MJXZERO, MJXTEX-MI;
+        }
+
+        .TEX-BI {
+            font-family: MJXZERO, MJXTEX-BI;
+        }
+
+        .TEX-S1 {
+            font-family: MJXZERO, MJXTEX-S1;
+        }
+
+        .TEX-S2 {
+            font-family: MJXZERO, MJXTEX-S2;
+        }
+
+        .TEX-S3 {
+            font-family: MJXZERO, MJXTEX-S3;
+        }
+
+        .TEX-S4 {
+            font-family: MJXZERO, MJXTEX-S4;
+        }
+
+        .TEX-A {
+            font-family: MJXZERO, MJXTEX-A;
+        }
+
+        .TEX-C {
+            font-family: MJXZERO, MJXTEX-C;
+        }
+
+        .TEX-CB {
+            font-family: MJXZERO, MJXTEX-CB;
+        }
+
+        .TEX-FR {
+            font-family: MJXZERO, MJXTEX-FR;
+        }
+
+        .TEX-FRB {
+            font-family: MJXZERO, MJXTEX-FRB;
+        }
+
+        .TEX-SS {
+            font-family: MJXZERO, MJXTEX-SS;
+        }
+
+        .TEX-SSB {
+            font-family: MJXZERO, MJXTEX-SSB;
+        }
+
+        .TEX-SSI {
+            font-family: MJXZERO, MJXTEX-SSI;
+        }
+
+        .TEX-SC {
+            font-family: MJXZERO, MJXTEX-SC;
+        }
+
+        .TEX-T {
+            font-family: MJXZERO, MJXTEX-T;
+        }
+
+        .TEX-V {
+            font-family: MJXZERO, MJXTEX-V;
+        }
+
+        .TEX-VB {
+            font-family: MJXZERO, MJXTEX-VB;
+        }
+
+        mjx-stretchy-v mjx-c,
+        mjx-stretchy-h mjx-c {
+            font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+        }
+
+        @font-face
+
+        /* 0 */
+            {
+            font-family: MJXZERO;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 1 */
+            {
+            font-family: MJXTEX;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 2 */
+            {
+            font-family: MJXTEX-B;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 3 */
+            {
+            font-family: MJXTEX-I;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 4 */
+            {
+            font-family: MJXTEX-MI;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 5 */
+            {
+            font-family: MJXTEX-BI;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 6 */
+            {
+            font-family: MJXTEX-S1;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 7 */
+            {
+            font-family: MJXTEX-S2;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 8 */
+            {
+            font-family: MJXTEX-S3;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 9 */
+            {
+            font-family: MJXTEX-S4;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 10 */
+            {
+            font-family: MJXTEX-A;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 11 */
+            {
+            font-family: MJXTEX-C;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 12 */
+            {
+            font-family: MJXTEX-CB;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 13 */
+            {
+            font-family: MJXTEX-FR;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 14 */
+            {
+            font-family: MJXTEX-FRB;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 15 */
+            {
+            font-family: MJXTEX-SS;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 16 */
+            {
+            font-family: MJXTEX-SSB;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 17 */
+            {
+            font-family: MJXTEX-SSI;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 18 */
+            {
+            font-family: MJXTEX-SC;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 19 */
+            {
+            font-family: MJXTEX-T;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 20 */
+            {
+            font-family: MJXTEX-V;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+        }
+
+        @font-face
+
+        /* 21 */
+            {
+            font-family: MJXTEX-VB;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+        }
+    </style>
+</head>
+
+<body style="margin: 20px;">
+    <input type="text" id="lookup-input"> <button style="width:100px;" id="lookup-enter">Lookup</button>
+    <div id="placeholder"></div>
+    <template id="template">
+        <div style="width: 100%; height: 100%;">
+            <div>Question ID: <span id="id"></span></div>
+            <div>Test: <span id="module"></span></div>
+            <div>Domain: <span id="class"></span></div>
+            <div>Skill: <span id="skill"></span></div>
+            <div>Difficulty: <span id="difficulty"></span></div><br>
+            <div id="prompt"></div>
+            <br>
+
+            <div style="display:grid;grid-template-columns: 35px 100%; row-gap: 10px;">
+                <button id="option-a" style="width: 30px; height: 30px; border-radius: 100%;">A.</button>
+                <div id="option-a-inner"></div>
+                <button id="option-b" style="width: 30px; height: 30px; border-radius: 100%;">B.</button>
+                <div id="option-b-inner"></div>
+                <button id="option-c" style="width: 30px; height: 30px; border-radius: 100%;">C.</button>
+                <div id="option-c-inner"></div>
+                <button id="option-d" style="width: 30px; height: 30px; border-radius: 100%;">D.</button>
+                <div id="option-d-inner"></div>
+            </div> <br>
+
+            <input type="text" id="submit-field"></input>
+            <button id="submit-button" style="width:100px;">Submit</button>
+
+            <div id="answer">Correct answer: <span id="answer-inner"></span></div><br>
+            <div id="rationale">Rationale: </div><br>
+            <div id="rationale-inner"></div>
+        </div>
+    </template>
+</body>
+
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
     const button = document.getElementById("lookup-enter")
     const textbox = document.getElementById("lookup-input")
-    button.addEventListener("click",()=>{
+    const placeholder = document.getElementById("placeholder")
+    const template = document.getElementById("template")
+    button.addEventListener("click", () => {
         let id = textbox.value
-        $(function(){
-            $.getJSON('data/cb-digital-questions.json',function(data) {
-                $.each(data,function(key,value){
-                    if (value.questionId == id){
+        $(function () {
+            $.getJSON('data/cb-digital-questions.json', function (data) {
+                $.each(data, function (key, value) {
+                    if (value.questionId == id) {
                         console.log(value);
+                        displayQuestion(value);
                     }
                 })
             })
         })
     })
+    /*displayQuestion({
+        "updateDate": 1691007959369,
+        "pPcc": "SAT#INI",
+        "questionId": "a15b3219",
+        "skill_cd": "COE",
+        "score_band_range_cd": 7,
+        "uId": "03937185-ffd7-48f8-af81-c8b82458f674",
+        "skill_desc": "Command of Evidence",
+        "createDate": 1691007959369,
+        "program": "SAT",
+        "primary_class_cd_desc": "Information and Ideas",
+        "ibn": null,
+        "external_id": "40e7dbe5-a37f-471d-bf2a-66c7e950d5d3",
+        "primary_class_cd": "INI",
+        "difficulty": "H",
+        "module": "english",
+        "content": {
+            "vaultid": "15e49535-f408-4ab3-91fa-66a539975ae0",
+            "keys": [
+                "c705509d-571d-4a91-9d2a-a39f57578b58"
+            ],
+            "rationale": "<p>Choice B is the best answer. The lighter bars show what happened when the announcement was to come before the election, and the darker bars show what happened when the announcement was to come after the election. For all three of the outcomes, the light and dark bars are virtually the same, demonstrating that the announcement timing didn&rsquo;t actually make a difference. </p><p>Choice A is incorrect. This accurately describes some data from the graph, but it doesn&rsquo;t weaken the hypothesis. It doesn&rsquo;t include the &ldquo;announcement after election&rdquo; data for comparison. Choice C is incorrect. This accurately describes some data from the graph, but it doesn&rsquo;t weaken the hypothesis. It doesn&rsquo;t include the &ldquo;announcement after election&rdquo; data for comparison. Choice D is incorrect. This accurately describes some data from the graph, but it doesn&rsquo;t weaken the hypothesis. It doesn&rsquo;t include the &ldquo;announcement before election&rdquo; data for comparison. </p>",
+            "origin": "proteus",
+            "stem": "<p>Which choice best describes data from the graph that weaken the team&rsquo;s hypothesis?</p>",
+            "externalid": "40e7dbe5-a37f-471d-bf2a-66c7e950d5d3",
+            "stimulus": "<figure class=\"image\"><svg aria-label=\"Bar graph titled Municipalities’ Responses to Inquiries about Potential Incentives for Firm. The horizontal axis has no label. 3 data categories are shown. The vertical axis is labeled Number of municipalities. It ranges from 0 to 1,300 in increments of 100. Refer to long description.\" height=\"578.7376708984375\" role=\"img\" viewbox=\"0 0 400 578.7376708984375\" width=\"400\" xmlns=\"http://www.w3.org/2000/svg\"><g data-name=\"Layer 1\" id=\"ed420550-79eb-48d4-af01-cd27cdd08afd\"><defs>\n<pattern height=\"100\" id=\"bar4\" patterntransform=\"rotate(50)\" patternunits=\"userSpaceOnUse\" width=\"10\" x=\"0\" y=\"0\">\n<rect fill=\"#CDCDCD\" height=\"100\" width=\"5\" x=\"0\" y=\"0\"></rect>\n<rect fill=\"#444444\" height=\"100\" width=\"5\" x=\"5\" y=\"0\"></rect>\n</pattern>\n</defs><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"99.75999450683594\" x2=\"385\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"72\" y2=\"72\"></line><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"93.75999450683594\" x2=\"105.75999450683594\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"72\" y2=\"72\"></line><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(87.75999450683594 78)\">1,300</text><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"99.75999450683594\" x2=\"385\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"91.23076923076923\" y2=\"91.23076923076923\"></line><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"93.75999450683594\" x2=\"105.75999450683594\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"91.23076923076923\" y2=\"91.23076923076923\"></line><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(87.75999450683594 97.23076923076923)\">1,200</text><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"99.75999450683594\" x2=\"385\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"110.46153846153845\" y2=\"110.46153846153845\"></line><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"93.75999450683594\" x2=\"105.75999450683594\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"110.46153846153845\" y2=\"110.46153846153845\"></line><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(87.75999450683594 116.46153846153845)\">1,100</text><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"99.75999450683594\" x2=\"385\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"129.69230769230768\" y2=\"129.69230769230768\"></line><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"93.75999450683594\" x2=\"105.75999450683594\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"129.69230769230768\" y2=\"129.69230769230768\"></line><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(87.75999450683594 135.69230769230768)\">1,000</text><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"99.75999450683594\" x2=\"385\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"148.9230769230769\" y2=\"148.9230769230769\"></line><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"93.75999450683594\" x2=\"105.75999450683594\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"148.9230769230769\" y2=\"148.9230769230769\"></line><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(87.75999450683594 154.9230769230769)\">900</text><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"99.75999450683594\" x2=\"385\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"168.15384615384613\" y2=\"168.15384615384613\"></line><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"93.75999450683594\" x2=\"105.75999450683594\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"168.15384615384613\" y2=\"168.15384615384613\"></line><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(87.75999450683594 174.15384615384613)\">800</text><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"99.75999450683594\" x2=\"385\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"187.3846153846154\" y2=\"187.3846153846154\"></line><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"93.75999450683594\" x2=\"105.75999450683594\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"187.3846153846154\" y2=\"187.3846153846154\"></line><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(87.75999450683594 193.3846153846154)\">700</text><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"99.75999450683594\" x2=\"385\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"206.6153846153846\" y2=\"206.6153846153846\"></line><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"93.75999450683594\" x2=\"105.75999450683594\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"206.6153846153846\" y2=\"206.6153846153846\"></line><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(87.75999450683594 212.6153846153846)\">600</text><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"99.75999450683594\" x2=\"385\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"225.84615384615384\" y2=\"225.84615384615384\"></line><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"93.75999450683594\" x2=\"105.75999450683594\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"225.84615384615384\" y2=\"225.84615384615384\"></line><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(87.75999450683594 231.84615384615384)\">500</text><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"99.75999450683594\" x2=\"385\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"245.07692307692307\" y2=\"245.07692307692307\"></line><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"93.75999450683594\" x2=\"105.75999450683594\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"245.07692307692307\" y2=\"245.07692307692307\"></line><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(87.75999450683594 251.07692307692307)\">400</text><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"99.75999450683594\" x2=\"385\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"264.30769230769226\" y2=\"264.30769230769226\"></line><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"93.75999450683594\" x2=\"105.75999450683594\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"264.30769230769226\" y2=\"264.30769230769226\"></line><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(87.75999450683594 270.30769230769226)\">300</text><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"99.75999450683594\" x2=\"385\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"283.53846153846155\" y2=\"283.53846153846155\"></line><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"93.75999450683594\" x2=\"105.75999450683594\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"283.53846153846155\" y2=\"283.53846153846155\"></line><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(87.75999450683594 289.53846153846155)\">200</text><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"99.75999450683594\" x2=\"385\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"302.7692307692308\" y2=\"302.7692307692308\"></line><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"93.75999450683594\" x2=\"105.75999450683594\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"302.7692307692308\" y2=\"302.7692307692308\"></line><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(87.75999450683594 308.7692307692308)\">100</text><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"99.75999450683594\" x2=\"385\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"322\" y2=\"322\"></line><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"93.75999450683594\" x2=\"105.75999450683594\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"322\" y2=\"322\"></line><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(87.75999450683594 328)\">0</text><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"middle\" transform=\"translate(24 197) rotate(-90)\">Number of municipalities</text><line fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" x1=\"99.75999450683594\" x2=\"99.75999450683594\" xmlns=\"http://www.w3.org/2000/svg\" y1=\"72\" y2=\"322\"></line><rect fill=\"#B3B3B3\" height=\"240.76923076923077\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"mitre\" stroke-width=\"0.9\" width=\"28.524000549316405\" x=\"128.28399505615235\" xmlns=\"http://www.w3.org/2000/svg\" y=\"81.23076923076923\"></rect><rect fill=\"#333333\" height=\"240\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"mitre\" stroke-width=\"0.9\" width=\"28.524000549316405\" x=\"156.80799560546876\" xmlns=\"http://www.w3.org/2000/svg\" y=\"82\"></rect><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(166.72799560546875 341.84) rotate(-40)\" x=\"0\" xmlns=\"http://www.w3.org/2000/svg\" y=\"0\">no response</text><rect fill=\"#B3B3B3\" height=\"39.80769230769231\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"mitre\" stroke-width=\"0.9\" width=\"28.524000549316405\" x=\"213.85599670410159\" xmlns=\"http://www.w3.org/2000/svg\" y=\"282.1923076923077\"></rect><rect fill=\"#333333\" height=\"39.42307692307692\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"mitre\" stroke-width=\"0.9\" width=\"28.524000549316405\" x=\"242.379997253418\" xmlns=\"http://www.w3.org/2000/svg\" y=\"282.5769230769231\"></rect><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(252.29999725341798 341.84) rotate(-40)\" x=\"0\" xmlns=\"http://www.w3.org/2000/svg\" y=\"0\">responded to inquiry</text><rect fill=\"#B3B3B3\" height=\"24.23076923076923\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"mitre\" stroke-width=\"0.9\" width=\"28.524000549316405\" x=\"299.4279983520508\" xmlns=\"http://www.w3.org/2000/svg\" y=\"297.7692307692308\"></rect><rect fill=\"#333333\" height=\"23.46153846153846\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"mitre\" stroke-width=\"0.9\" width=\"28.524000549316405\" x=\"327.9519989013672\" xmlns=\"http://www.w3.org/2000/svg\" y=\"298.53846153846155\"></rect><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"end\" transform=\"translate(337.8719989013672 341.84) rotate(-40)\" x=\"0\" xmlns=\"http://www.w3.org/2000/svg\" y=\"0\">offered incentive</text><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"middle\" transform=\"translate(242.37999725341797 24)\">Municipalities’ Responses to Inquiries </text><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"middle\" transform=\"translate(242.37999725341797 48)\">about Potential Incentives for Firm</text><rect fill=\"none\" height=\"71\" stroke=\"#000000\" stroke-linejoin=\"mitre\" stroke-width=\"0.9\" width=\"280.1479034423828\" x=\"67.4260482788086\" xmlns=\"http://www.w3.org/2000/svg\" y=\"496.7376708984375\"></rect><rect fill=\"#B3B3B3\" height=\"12\" stroke=\"#000000\" stroke-linejoin=\"mitre\" stroke-width=\"0.9\" width=\"12\" x=\"74.4260482788086\" xmlns=\"http://www.w3.org/2000/svg\" y=\"508.7376708984375\"></rect><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"top\" transform=\"translate(96.4260482788086 520.7376708984375)\"> announcement before election</text><rect fill=\"#333333\" height=\"12\" stroke=\"#000000\" stroke-linejoin=\"mitre\" stroke-width=\"0.9\" width=\"12\" x=\"74.4260482788086\" xmlns=\"http://www.w3.org/2000/svg\" y=\"540.7376708984375\"></rect><text fill=\"#000000\" font-family=\"Crimson Text\" font-size=\"19.84\" text-anchor=\"top\" transform=\"translate(96.4260482788086 552.7376708984375)\"> announcement after election</text></g></svg></figure><div aria-label=\"Long description for bar graph titled Municipalities’ Responses to Inquiries about Potential Incentives for Firm\" class=\"sr-only\" role=\"region\"><ul>\n<li>For each data category, the following bars are shown: <br/>\n<ul>\n<li>announcement before election</li>\n<li>announcement after election</li>\n</ul>\n</li>\n<li>The data for the 3 categories are as follows: <br/>\n<ul>\n<li>no response:\n<ul>\n<li>announcement before election: 1,252</li>\n<li>announcement after election: 1,248</li>\n</ul>\n</li>\n<li>responded to inquiry:\n<ul>\n<li>announcement before election: 207</li>\n<li>announcement after election: 205</li>\n</ul>\n</li>\n<li>offered incentive:\n<ul>\n<li>announcement before election: 128</li>\n<li>announcement after election: 122</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul></div>\n<p>In the United States, firms often seek incentives from municipal governments to expand to those municipalities. A team of political scientists hypothesized that municipalities are much more likely to respond to firms and offer incentives if expansions can be announced in time to benefit local elected officials than if they can’t. The team contacted officials in thousands of municipalities, inquiring about incentives for a firm looking to expand and indicating that the firm would announce its expansion on a date either just before or just after the next election. </p>",
+            "templateclusterid": "29b0cdce-8585-4198-997d-e006aeec47c9",
+            "parenttemplatename": "OSP-KA-QUA-H001",
+            "parenttemplateid": "",
+            "type": "mcq",
+            "position": "0",
+            "templateclustername": "",
+            "answerOptions": [{
+                    "id": "25e0ff7d-24e2-4d23-8905-bdf52e0c1829",
+                    "content": "<p>A large majority of the municipalities that received an inquiry mentioning plans for an announcement before the next election didn&rsquo;t respond to the inquiry.</p>"
+                },
+                {
+                    "id": "c705509d-571d-4a91-9d2a-a39f57578b58",
+                    "content": "<p>The proportion of municipalities that responded to the inquiry or offered incentives didn&rsquo;t substantially differ across the announcement timing conditions.&nbsp;</p>"
+                },
+                {
+                    "id": "ecc6fbf4-35a3-4eca-a1bb-c43183252159",
+                    "content": "<p>Only around half the municipalities that responded to inquiries mentioning plans for an announcement before the next election offered incentives.&nbsp;</p>"
+                },
+                {
+                    "id": "a79bfd71-6ce1-41bd-96de-1328927ad771",
+                    "content": "<p>Of the municipalities that received an inquiry mentioning plans for an announcement date after the next election, more than 1,200 didn&rsquo;t respond and only around 100 offered incentives.</p>"
+                }
+            ],
+            "correct_answer": [
+                "B"
+            ]
+        }
+    })*/
+
+    function displayQuestion(data) {
+        console.log(data)
+
+        let isMcq = data.content.answerOptions.length == 0
+        placeholder.innerHTML = template.innerHTML;
+        placeholder.querySelector("#id").innerHTML = data.questionId
+        placeholder.querySelector("#module").innerHTML = data.module.slice(0, 1).toUpperCase() + data.module.slice(1)
+        placeholder.querySelector("#class").innerHTML = data.primary_class_cd_desc
+        placeholder.querySelector("#skill").innerHTML = data.skill_desc
+        placeholder.querySelector("#difficulty").innerHTML = {
+            "H": "Hard",
+            "M": "Medium",
+            "E": "Easy"
+        } [data.difficulty]
+        placeholder.querySelector("#prompt").innerHTML = data.content.stimulus + data.content.stem
+        if (isMcq) {
+            placeholder.querySelector("#option-a").remove()
+            placeholder.querySelector("#option-b").remove()
+            placeholder.querySelector("#option-c").remove()
+            placeholder.querySelector("#option-d").remove()
+        } else {
+            placeholder.querySelector("#submit-button").remove()
+            placeholder.querySelector("#submit-field").remove()
+            placeholder.querySelector("#option-a-inner").innerHTML = data.content.answerOptions[0].content
+            placeholder.querySelector("#option-b-inner").innerHTML = data.content.answerOptions[1].content
+            placeholder.querySelector("#option-c-inner").innerHTML = data.content.answerOptions[2].content
+            placeholder.querySelector("#option-d-inner").innerHTML = data.content.answerOptions[3].content
+        }
+        placeholder.querySelector("#rationale").setAttribute("hidden", true)
+        placeholder.querySelector("#answer").setAttribute("hidden", true)
+
+        function revealAnswer() {
+            placeholder.querySelector("#rationale").removeAttribute("hidden")
+            placeholder.querySelector("#answer").removeAttribute("hidden")
+
+            placeholder.querySelector("#rationale-inner").innerHTML = data.content.rationale
+            placeholder.querySelector("#answer-inner").innerHTML = data.content.correct_answer.join(" or ")
+        }
+        placeholder.querySelector("#option-a").addEventListener("click", revealAnswer)
+        placeholder.querySelector("#option-b").addEventListener("click", revealAnswer)
+        placeholder.querySelector("#option-c").addEventListener("click", revealAnswer)
+        placeholder.querySelector("#option-d").addEventListener("click", revealAnswer)
+        placeholder.querySelector("#submit-button").addEventListener("click", revealAnswer)
+    }
 </script>

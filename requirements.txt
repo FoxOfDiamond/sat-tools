@@ -1,5 +1,0 @@
-flask
-diskcache
-gunicorn
-peewee
-django-environ

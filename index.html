@@ -40,3 +40,20 @@
 </style>
 
 <input type="text" id="lookup-input"> <button id="lookup-enter">Lookup</button>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+<script>
+    const button = document.getElementById("lookup-enter")
+    const textbox = document.getElementById("lookup-input")
+    button.addEventListener("click",()=>{
+        let id = textbox.value
+        $(function(){
+            $.getJSON('data/cb-digital-questions.json',function(data) {
+                $.each(data,function(key,value){
+                    if (value.questionId == id){
+                        console.log(value);
+                    }
+                })
+            })
+        })
+    })
+</script>

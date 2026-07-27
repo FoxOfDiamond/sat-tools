@@ -1768,10 +1768,12 @@
                     question_placeholder.querySelector("#option-c").disabled = true
                     question_placeholder.querySelector("#option-d").disabled = true
                 } else {
-                    question_placeholder.querySelector("#option-a").addEventListener("click", ()=>{questionData[id].answer = "A"})
-                    question_placeholder.querySelector("#option-b").addEventListener("click", ()=>{questionData[id].answer = "B"})
-                    question_placeholder.querySelector("#option-c").addEventListener("click", ()=>{questionData[id].answer = "C"})
-                    question_placeholder.querySelector("#option-d").addEventListener("click", ()=>{questionData[id].answer = "D"})
+                    if (isMcqAnswer(questionData[id].answer)) {
+                        question_placeholder.querySelector("#option-" + questionData[id].answer.toLowerCase()).style.backgroundColor = "#9ca3af"
+                    }
+                    ["a","b","c","d"].forEach(letter => {
+                        question_placeholder.querySelector("#option-"+letter).addEventListener("click", ()=>{questionData[id].answer = questionData[id].answer == letter.toUpperCase() ? "" : letter.toUpperCase(); question_placeholder.querySelector("#option-" + letter).style.backgroundColor = questionData[id].answer == letter.toUpperCase() ? "#9ca3af" : "#ffffff"})
+                    })
 
                     onkeydown = (event => {
                         if (event.key == "Enter") {

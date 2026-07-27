@@ -1749,6 +1749,7 @@
                     question_placeholder.querySelector("#submit-field").addEventListener("input", ()=>{questionData[id].answer = question_placeholder.querySelector("#submit-field").value})
                 }
             } else {
+                question_placeholder.querySelector("#submit-field").innerHTML = ""
                 question_placeholder.querySelector("#submit-field").remove()
 
                 question_placeholder.querySelector("#option-a-inner").innerHTML = data.content.answer ? (data.content.answer.choices.a.body) : (data.content.answerOptions[0].content)

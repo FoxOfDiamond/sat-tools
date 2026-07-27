@@ -1580,7 +1580,8 @@
                 <div id="option-d-inner"></div>
             </div>
 
-            <input type="text" id="submit-field"><br id="submit-field-br">    
+            <input type="text" id="submit-field"><br id="submit-field-br">
+            <br id="revealed-br">    
 
             <div id="answer">Correct answer: <span id="answer-inner"></span><br></div>
             <div id="rationale">Rationale: </div>
@@ -1783,7 +1784,9 @@
                     })
                 }
             }
-
+            if (!revealed){
+                question_placeholder.querySelector("#revealed-br").remove()
+            }
             if (id == questionCount-1){
                 question_placeholder.querySelector("#next-question").remove()
                 question_placeholder.querySelector("#complete").addEventListener("click", ()=>{

@@ -1732,9 +1732,9 @@
             onkeydown = null
             if (!isMcq) {
                 question_placeholder.querySelector("#options").remove()
+                question_placeholder.querySelector("#submit-field").value = questionData[id].answer
                 if (revealed) {
                     question_placeholder.querySelector("#submit-field").disabled = true
-                    question_placeholder.querySelector("#submit-field").value = questionData[id].answer
                     if (questionData[id].correct) {
                         question_placeholder.querySelector("#submit-field").style.backgroundColor = "#15ff00"
                     } else if (questionData[id].uncertain) {

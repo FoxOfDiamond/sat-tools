@@ -1777,11 +1777,11 @@
                     }
                     ["a","b","c","d"].forEach(letter => {
                         question_placeholder.querySelector("#option-"+letter).addEventListener("click", ()=>{
-                            questionData[id].answer = questionData[id].answer == letter.toUpperCase() ? "" : letter.toUpperCase()
+                            questionData[id].answer = questionData[id].answer == letter.toUpperCase() ? "" : letter.toUpperCase();
                             ["a","b","c","d"].forEach(letter => {
                                 question_placeholder.querySelector("#option-" + letter).style.backgroundColor = "#ffffff"
-                            })
-                            question_placeholder.querySelector("#option-" + letter).style.backgroundColor = questionData[id].answer == letter.toUpperCase() ? "#9ca3af" : "#ffffff"
+                            });
+                            question_placeholder.querySelector("#option-" + letter).style.backgroundColor = questionData[id].answer == letter.toUpperCase() ? "#9ca3af" : "#ffffff";
                         })
                     })
 

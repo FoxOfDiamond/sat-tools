@@ -1608,6 +1608,7 @@
         return ["A","B","C","D"].findIndex(element => {return element == answer.toUpperCase()}) > -1
     }
     filters.querySelector("#input-start").addEventListener("click", async () => {
+        question_placeholder.innerHTML = "Loading questions..."
         if (started) return
         started = true
         let questionCount = Number(filters.querySelector("#input-count").value)

@@ -1603,10 +1603,13 @@
     const navigation_bar = document.getElementById("navigation")
     const navigation_template = document.getElementById("question-count-template")
     const filters = document.getElementById("filters")
+    let started = false
     function isMcqAnswer(answer) {
         return ["A","B","C","D"].findIndex(element => {return element == answer.toUpperCase()}) > -1
     }
     filters.querySelector("#input-start").addEventListener("click", async () => {
+        if (started) return
+        started = true
         let questionCount = Number(filters.querySelector("#input-count").value)
         let revealed = false
         let selected_domains = {

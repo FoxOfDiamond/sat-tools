@@ -1772,7 +1772,13 @@
                         question_placeholder.querySelector("#option-" + questionData[id].answer.toLowerCase()).style.backgroundColor = "#9ca3af"
                     }
                     ["a","b","c","d"].forEach(letter => {
-                        question_placeholder.querySelector("#option-"+letter).addEventListener("click", ()=>{questionData[id].answer = questionData[id].answer == letter.toUpperCase() ? "" : letter.toUpperCase(); question_placeholder.querySelector("#option-" + letter).style.backgroundColor = questionData[id].answer == letter.toUpperCase() ? "#9ca3af" : "#ffffff"})
+                        question_placeholder.querySelector("#option-"+letter).addEventListener("click", ()=>{
+                            questionData[id].answer = questionData[id].answer == letter.toUpperCase() ? "" : letter.toUpperCase()
+                            ["a","b","c","d"].forEach(letter => {
+                                question_placeholder.querySelector("#option-" + letter).style.backgroundColor = "#ffffff"
+                            })
+                            question_placeholder.querySelector("#option-" + letter).style.backgroundColor = questionData[id].answer == letter.toUpperCase() ? "#9ca3af" : "#ffffff"
+                        })
                     })
 
                     onkeydown = (event => {
